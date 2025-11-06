@@ -22,4 +22,4 @@ apt-get install -y  php8.4-fpm \
                     php8.4-pcov \
                     php8.4-mongo
 
-pecl install xdebug-beta
+pecl install xdebug

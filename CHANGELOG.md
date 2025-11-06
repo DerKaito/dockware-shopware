@@ -10,6 +10,10 @@ contain these changes.
 
 ## [Unreleased]
 
+### Changed
+
+- Remove "Xdebug Beta" for PHP 8.4 and switch to official release
+
 ### Fixed
 
 - It was possible to start the image with an unsupported Node version which led to problems. The container will now crash during startup to give you immediate feedback.
@@ -19,7 +23,7 @@ contain these changes.
 ### Added
 
 - Add conditional NVM decompression to prevent restart failures (thx @susannekoerber)
-- Add "patch" package to support Composer Patching vendors. 
+- Add "patch" package to support Composer Patching vendors.
 
 ### Changed
 
