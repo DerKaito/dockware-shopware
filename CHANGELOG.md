@@ -8,6 +8,12 @@ Because this is the foundation of the Shopware environment, we will always relea
 changes in the operating system or packages. New Shopware versions, built with this version, will then automatically
 contain these changes.
 
+## [Unreleased]
+
+### Fixed
+
+- It was possible to start the image with an unsupported Node version which led to problems. The container will now crash during startup to give you immediate feedback.
+
 ## [1.1.0]
 
 ### Added
