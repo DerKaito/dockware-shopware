@@ -8,6 +8,7 @@
             <directory>../tests/php/php8.3</directory>
             <directory>../tests/tools/composer/v2</directory>
             <directory>../tests/tools/bun</directory>
+            <directory>../tests/tools/mailcatcher</directory>
             <directory>../tests/features/xdebug-off</directory>
             <directory>../tests/shopware</directory>
         </testsuite>

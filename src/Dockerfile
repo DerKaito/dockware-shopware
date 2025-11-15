@@ -130,6 +130,9 @@ RUN echo "2:basics" && \
     # its used from here: https://github.com/potsky/PimpMyLog/pull/149/files
     mv /dockware/tmp/config/pimpmylog/global.inc.php /var/www/pimpmylog/inc/global.inc.php && \
     chown -R www-data:www-data /var/www/pimpmylog/ && \
+    # --------------------------------------------------------------------------
+    # configure ssmtp to use local mailcatcher
+    sed -i 's/^mailhub=mail$/mailhub=localhost:1025/' /etc/ssmtp/ssmtp.conf && \
     # ---------------------------------------------------------------------------
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

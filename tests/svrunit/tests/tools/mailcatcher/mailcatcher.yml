@@ -1,0 +1,5 @@
+file_content:
+
+  - name: "SSMTP configured to use local Mailcatcher"
+    file: "/etc/ssmtp/ssmtp.conf"
+    expected: "mailhub=localhost:1025"
