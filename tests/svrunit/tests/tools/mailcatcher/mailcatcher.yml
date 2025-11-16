@@ -1,5 +1,5 @@
-file_content:
+commands:
 
   - name: "SSMTP configured to use local Mailcatcher"
-    file: "/etc/ssmtp/ssmtp.conf"
-    expected: "mailhub=localhost:1025"
+    command: "sudo cat /etc/ssmtp/ssmtp.conf | grep 'mailhub=localhost:1025' || echo 'not-configured'"
+    not_expected: "not-configured"
