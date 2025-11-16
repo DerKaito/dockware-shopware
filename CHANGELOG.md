@@ -10,6 +10,10 @@ contain these changes.
 
 ## [Unreleased]
 
+### Added
+
+- Added a built-in healthcheck. You can now use "docker compose up --wait" to wait until the container is fully ready. (@thx for that brilliant idea @BlackScorp)
+
 ### Fixed
 
 - Mailcatcher was not correctly configured to be used in SSMTP configurations.
