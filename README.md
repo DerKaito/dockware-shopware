@@ -7,23 +7,25 @@
 Welcome to Dockware! For more information, visit [dockware.io](https://dockware.io).
 
 <!-- TOC -->
+
 * [Dockware for Shopware](#dockware-for-shopware)
-  * [What is Dockware for Shopware?](#what-is-dockware-for-shopware)
-  * [When to use this image?](#when-to-use-this-image)
-  * [Versioning](#versioning)
-    * [Git Tags](#git-tags)
-    * [Essentials-First](#essentials-first)
-    * [LTS](#lts)
-    * [Patches](#patches)
-  * [Deprecations and Legacy services](#deprecations-and-legacy-services)
-  * [Quick Start](#quick-start)
-    * [Docker Run](#docker-run)
-    * [Docker Compose](#docker-compose)
-    * [Watchers](#watchers)
-  * [Documentation](#documentation)
-  * [Shopware Guidelines](#shopware-guidelines)
-  * [Contribution](#contribution)
-  * [License](#license)
+    * [What is Dockware for Shopware?](#what-is-dockware-for-shopware)
+    * [When to use this image?](#when-to-use-this-image)
+    * [Versioning](#versioning)
+        * [Git Tags](#git-tags)
+        * [Essentials-First](#essentials-first)
+        * [LTS](#lts)
+        * [Patches](#patches)
+    * [Deprecations and Legacy services](#deprecations-and-legacy-services)
+    * [Quick Start](#quick-start)
+        * [Docker Run](#docker-run)
+        * [Docker Compose](#docker-compose)
+        * [Watchers](#watchers)
+    * [Documentation](#documentation)
+    * [Shopware Guidelines](#shopware-guidelines)
+    * [Contribution](#contribution)
+    * [License](#license)
+
 <!-- TOC -->
 
 ## What is Dockware for Shopware?
@@ -95,14 +97,15 @@ Shopware still releases minor releases for older major versions (LTS) and theref
 This is done by adding new branches like **lts/sw-X.Y.z** based on the latest main branch if possible.
 In this branch, additional adjustments are done for the old version, like adjusting PHP and Node versions and maybe more.
 
-After finishing the changes, a new tag like `sw-X.Y.z` or `sw-X.Y.z-v2` is created in this branch and a new Docker Image is released.
+After finishing the changes, a new tag like `sw-X.Y.z` is created in this branch and a new Docker Image is released.
 
 ### Patches
 
 We do not update existing Shopware Docker images once they are released.
 In case we find a critical issue that needs to be fixed, we will create a new version like **X.Y.z-v2**.
 
-These fixes will be done in a separate branch with the **base version name** of the Shopware version like **patches/sw-X.Y.z**.
+These fixes will be done in a separate branch with the **base version name** of the Shopware version like **lts/sw-X.Y.z**.
+The branch will be based on the original release tag of the Shopware version.
 
 The first **and all upcoming patches** of this version will be done in this branch with additional tags being added to GIT.
 
