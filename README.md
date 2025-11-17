@@ -6,6 +6,26 @@
 
 Welcome to Dockware! For more information, visit [dockware.io](https://dockware.io).
 
+<!-- TOC -->
+* [Dockware for Shopware](#dockware-for-shopware)
+  * [What is Dockware for Shopware?](#what-is-dockware-for-shopware)
+  * [When to use this image?](#when-to-use-this-image)
+  * [Versioning](#versioning)
+    * [Git Tags](#git-tags)
+    * [Essentials-First](#essentials-first)
+    * [LTS](#lts)
+    * [Patches](#patches)
+  * [Deprecations and Legacy services](#deprecations-and-legacy-services)
+  * [Quick Start](#quick-start)
+    * [Docker Run](#docker-run)
+    * [Docker Compose](#docker-compose)
+    * [Watchers](#watchers)
+  * [Documentation](#documentation)
+  * [Shopware Guidelines](#shopware-guidelines)
+  * [Contribution](#contribution)
+  * [License](#license)
+<!-- TOC -->
+
 ## What is Dockware for Shopware?
 
 Our Dockware images are optimized Docker images for web development in general, but also for Symfony and Shopware projects.
@@ -66,6 +86,25 @@ The bundled Shopware installation is only the small addon to the actual essentia
 
 Therefore, when releasing a new Shopware version, we will ensure to first release the official new version of the essentials image,
 if any changes where made to it, and then release the Shopware version on top of it.
+
+### LTS
+
+The source code of this repository is always the latest Shopware version.
+Shopware still releases minor releases for older major versions (LTS) and therefore we sometimes need to create new images for these versions.
+
+This is done by adding new branches like **lts/sw-X.Y.z** based on the latest main branch if possible.
+In this branch, additional adjustments are done for the old version, like adjusting PHP and Node versions and maybe more.
+
+After finishing the changes, a new tag like `sw-X.Y.z` or `sw-X.Y.z-v2` is created in this branch and a new Docker Image is released.
+
+### Patches
+
+We do not update existing Shopware Docker images once they are released.
+In case we find a critical issue that needs to be fixed, we will create a new version like **X.Y.z-v2**.
+
+These fixes will be done in a separate branch with the **base version name** of the Shopware version like **patches/sw-X.Y.z**.
+
+The first **and all upcoming patches** of this version will be done in this branch with additional tags being added to GIT.
 
 ## Deprecations and Legacy services
 
@@ -131,6 +170,13 @@ make watch-storefront
 
 For all these cool features like Xdebug, Filebeat, PHP Switching, Supervisor and more,
 please check out the Docs at [https://dockware.io](https://dockware.io).
+
+## Shopware Guidelines
+
+We follow the Shopware guidelines for system requirements and release policies.
+
+* System Requirements: https://docs.shopware.com/en/shopware-6-en/first-steps/system-requirements
+* Release Policty: https://developer.shopware.com/release-notes/
 
 ## Contribution
 

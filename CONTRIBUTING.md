@@ -1,12 +1,14 @@
 # How to Contribute?
 
 <!-- TOC -->
+
 * [How to Contribute?](#how-to-contribute)
-  * [Add a new Shopware version](#add-a-new-shopware-version)
-    * [Modifying PHP](#modifying-php)
-    * [Modifying Node](#modifying-node)
-    * [Other Changes](#other-changes)
-  * [Testing](#testing)
+    * [Add a new Shopware version](#add-a-new-shopware-version)
+        * [Modifying PHP](#modifying-php)
+        * [Modifying Node](#modifying-node)
+        * [Other Changes](#other-changes)
+    * [Testing](#testing)
+
 <!-- TOC -->
 
 ## Add a new Shopware version
@@ -26,7 +28,6 @@ If you need to adjust PHP or Node versions, please open the installation scripts
 If everything works, please create a pull request.
 
 Otherwise, it can happen that you need to adjust things, depending on what has changed :).
-
 
 ### Modifying PHP
 
