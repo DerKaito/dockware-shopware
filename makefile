@@ -8,7 +8,9 @@
 # this is the one, that will be installed in the shopware image
 # however, it the tag can still use "dev-main" as version for nightly builds while still this version is installed
 CURRENT_SW_VERSION:=6.7.4.2
-
+# ------------------------------
+# this is the minimum php version for Shopware, it will be installed using this version
+CURRENT_SW_VERSION_MIN_PHP:=8.2
 
 # ----------------------------------------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------------------------------
@@ -69,7 +71,7 @@ build-shopware: ##3 Builds with the current Shopware version [tag=x.y.z|dev-main
 ifndef tag
 	$(error Please provide the argument tag=xyz to run the command)
 endif
-	@cd ./src && DOCKER_BUILDKIT=1 docker build --squash --build-arg VERSION=$(CURRENT_SW_VERSION) -t dockware/shopware:$(tag) .
+	@cd ./src && DOCKER_BUILDKIT=1 docker build --squash --build-arg VERSION=$(CURRENT_SW_VERSION) --build-arg MIN_PHP=$(CURRENT_SW_VERSION_MIN_PHP) -t dockware/shopware:$(tag) .
 
 analyze: ##3 Shows the size of the image [image=shopware|shopware-essentials, tag=x.y.z|dev-main]
 ifndef image
@@ -97,6 +99,7 @@ ifndef tag
 	$(error Please provide the argument tag=xyz to run the command)
 endif
 	php ./vendor/bin/svrunit test --configuration=./tests/svrunit/suites/$(image).xml --docker-tag=$(tag) --debug --report-junit --report-html
+
 
 cypress: ##4 Runs all Cypress tests for the Shopware image [tag=x.y.z|dev-main]
 ifndef tag
