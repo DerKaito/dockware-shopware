@@ -41,7 +41,7 @@ describe('Shopware Administration', () => {
 
         cy.visit('/admin');
         cy.get('#sw-field--username').type('admin');
-        cy.get('#v-0').type('shopware');
+        cy.get('#sw-field--password').type('shopware');
         cy.get('.mt-button').click();
 
         cy.contains('.sw-version__info', shopware.getVersion());
@@ -51,7 +51,7 @@ describe('Shopware Administration', () => {
 
         cy.visit('/admin');
         cy.get('#sw-field--username').type('admin');
-        cy.get('#v-0').type('shopware');
+        cy.get('#sw-field--password').type('shopware');
         cy.get('.mt-button').click();
 
         cy.get('.sw-extension > span.sw-admin-menu__navigation-link > .sw-admin-menu__navigation-link-label').click();
