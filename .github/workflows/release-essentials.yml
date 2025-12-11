@@ -26,6 +26,7 @@ jobs:
         uses: ./.github/actions/circleci
         with:
           # -------------------------------------------
+          BRANCH: main
           IMAGE: shopware-essentials
           VERSION: ${{ github.event.inputs.version }}
           IS_LATEST: ${{ github.event.inputs.setLatest }}

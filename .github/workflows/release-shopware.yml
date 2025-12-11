@@ -26,6 +26,7 @@ jobs:
         uses: ./.github/actions/circleci
         with:
           # -------------------------------------------
+          BRANCH: ${GITHUB_REF_NAME}
           IMAGE: shopware
           VERSION: ${{ github.event.inputs.version }}
           IS_LATEST: ${{ github.event.inputs.setLatest }}
