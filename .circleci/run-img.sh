@@ -15,9 +15,6 @@ IS_LATEST=$5
 
 cat <<EOT > body.json
 {
-  "config": {
-    "branch": "$BRANCH"
-  },
   "parameters": {
     "imageName": "$IMAGE_NAME",
     "imageTag": "$IMAGE_TAG",
