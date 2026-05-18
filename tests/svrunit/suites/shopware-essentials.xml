@@ -74,7 +74,7 @@
             <directory>../tests/features/xdebug-on</directory>
         </testsuite>
 
-        <testsuite name="PHP 8.5, XDebug ON" group="php" dockerImage="dockware/shopware:{{tag}}" dockerEnv="PHP_VERSION=8.5,XDEBUG_ENABLED=1">
+        <testsuite name="PHP 8.5, XDebug ON" group="php" dockerImage="dockware/shopware-essentials:{{tag}}" dockerEnv="PHP_VERSION=8.5,XDEBUG_ENABLED=1">
             <directory>../tests/php/php8.5</directory>
             <directory>../tests/tools/xdebug/xdebug3</directory>
             <directory>../tests/tools/composer/v2</directory>
