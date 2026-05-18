@@ -210,6 +210,13 @@ commands:
           command: |
             docker tag dockware/<< parameters.imageName >>:<< parameters.imageTag >> dockware/<< parameters.imageName >>:<< parameters.imageTag >>-<< parameters.imageArch >>
       - run:
+          name: Tag Image for Shopware Major Verion
+          command: | 
+            if [ "<< parameters.imageName >>" = "shopware" -a "<< parameters.imageTag >>" != "dev-main" ]; then
+               docker tag dockware/<< parameters.imageName >>:<< parameters.imageTag >> dockware/<< parameters.imageName >>:$(echo "<< parameters.imageTag >>" | cut -f 1,2 -d '.')-latest
+               docker tag dockware/<< parameters.imageName >>:<< parameters.imageTag >> dockware/<< parameters.imageName >>:$(echo "<< parameters.imageTag >>" | cut -f 1,2 -d '.')-latest-<< parameters.imageArch >>
+            fi
+      - run:
           name: Push Image
           command: |
             docker push dockware/<< parameters.imageName >>:<< parameters.imageTag >>-<< parameters.imageArch >>
