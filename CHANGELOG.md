@@ -8,11 +8,11 @@ Because this is the foundation of the Shopware environment, we will always relea
 changes in the operating system or packages. New Shopware versions, built with this version, will then automatically
 contain these changes.
 
-## Unreleased
+## [1.4.0]
 
 ### Added
 
-- php 8.5 support
+- Add PHP 8.5
 
 ## [1.3.0]
 
